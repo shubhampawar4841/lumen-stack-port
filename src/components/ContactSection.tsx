@@ -1,12 +1,13 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail, Send, Loader2 } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Send, Loader2, Phone } from "lucide-react";
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Mail, label: "Email", href: "mailto:hello@alexchen.dev" },
+  { icon: Github, label: "GitHub", href: "https://github.com/shubhampawar4841" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/shubhampawar4841" },
+  { icon: Twitter, label: "Twitter", href: "https://twitter.com/shubhampawar4841" },
+  { icon: Mail, label: "Email", href: "mailto:shubhampawar4036@gmail.com" },
+  { icon: Phone, label: "Phone", href: "tel:+919359748824" },
 ];
 
 const ContactSection = () => {
@@ -32,7 +33,6 @@ const ContactSection = () => {
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-16">
-          {/* Left */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -51,6 +51,8 @@ const ContactSection = () => {
                 <motion.a
                   key={s.label}
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.4 + i * 0.1 }}
@@ -63,7 +65,6 @@ const ContactSection = () => {
             </div>
           </motion.div>
 
-          {/* Form */}
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 40 }}

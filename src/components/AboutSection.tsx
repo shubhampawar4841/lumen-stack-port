@@ -3,19 +3,19 @@ import { motion, useInView } from "framer-motion";
 import { MapPin, Briefcase } from "lucide-react";
 
 const stats = [
-  { label: "Years Experience", value: 3, suffix: "+" },
-  { label: "Projects Built", value: 50, suffix: "+" },
-  { label: "Happy Clients", value: 20, suffix: "+" },
+  { label: "Years Experience", value: 2, suffix: "+" },
+  { label: "Projects Built", value: 15, suffix: "+" },
+  { label: "Happy Clients", value: 5, suffix: "+" },
   { label: "Open Source Contributions", value: 10, suffix: "+" },
 ];
 
 const skills = [
-  { name: "React / Next.js", level: 95 },
-  { name: "TypeScript", level: 90 },
+  { name: "React / Next.js / Angular", level: 92 },
+  { name: "TypeScript / JavaScript", level: 95 },
   { name: "Node.js / Express", level: 85 },
-  { name: "Python", level: 80 },
-  { name: "PostgreSQL / MongoDB", level: 85 },
-  { name: "DevOps / Docker", level: 75 },
+  { name: "PostgreSQL / MongoDB / Supabase", level: 88 },
+  { name: "AI / LLM Integration", level: 80 },
+  { name: "DevOps / Cloudflare / Vercel", level: 75 },
 ];
 
 const CountUpValue = ({ target, go }: { target: number; go: boolean }) => {
@@ -55,7 +55,7 @@ const AboutSection = () => {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 rotate-6" />
               <div className="absolute inset-0 rounded-2xl glass-card flex items-center justify-center">
                 <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/40 to-secondary/40 flex items-center justify-center">
-                  <span className="font-display text-4xl font-bold text-foreground">AC</span>
+                  <span className="font-display text-4xl font-bold text-foreground">SP</span>
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-4 glass-card rounded-lg px-3 py-2 flex items-center gap-2">
@@ -67,10 +67,10 @@ const AboutSection = () => {
 
           <motion.div initial={{ opacity: 0, x: 50 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.3 }} className="flex flex-col justify-center">
             <p className="font-body text-foreground/80 text-lg leading-relaxed mb-6">
-              I'm a passionate Full Stack Developer with a love for creating digital experiences that are both beautiful and functional. With over 3 years of experience, I specialize in building modern web applications using React, Node.js, and cloud technologies.
+              I'm Shubham Pawar — a Full Stack Engineer skilled in Next.js, React, Angular, TypeScript, Express, and Prisma. I'm experienced in AI-powered applications and web scraping technologies.
             </p>
             <p className="font-body text-muted-foreground leading-relaxed mb-8">
-              When I'm not coding, you'll find me contributing to open source projects, writing technical articles, or exploring new technologies. I believe in writing clean, maintainable code that scales.
+              I constantly improve my coding skills and expand my portfolio by sharing my work online. I love building real-world solutions — from hospital management systems with voice AI to automated content pipelines.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-8">

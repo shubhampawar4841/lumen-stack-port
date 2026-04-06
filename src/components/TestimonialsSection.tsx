@@ -4,28 +4,22 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "CTO, TechNova Inc.",
-    initials: "SJ",
-    text: "Alex is one of the most talented developers I've worked with. Their ability to translate complex requirements into elegant solutions is remarkable. The dashboard they built exceeded all our expectations.",
+    name: "Team Lead",
+    role: "Junoon LLC",
+    initials: "JL",
+    text: "Shubham quickly adapted to our AI-driven workflows and delivered production-ready React Native apps with real-time LLM integrations. His scraping solutions using Firecrawl and Apify were exceptional.",
   },
   {
-    name: "Michael Chen",
-    role: "Product Manager, DataStream",
-    initials: "MC",
-    text: "Working with Alex was a game-changer for our team. They brought not just technical expertise but also a deep understanding of user experience that elevated our entire product.",
+    name: "Project Manager",
+    role: "Finovoice",
+    initials: "FV",
+    text: "Shubham built our entire SaaS platform with precise data handling and beautiful dashboards. His implementation of RBAC with Clerk & Supabase was rock-solid from day one.",
   },
   {
-    name: "Emily Rodriguez",
-    role: "Founder, StartupX",
-    initials: "ER",
-    text: "Alex delivered our MVP in record time without compromising on quality. Their proactive communication and attention to detail made the entire development process smooth and enjoyable.",
-  },
-  {
-    name: "David Park",
-    role: "Lead Developer, CodeCraft",
-    initials: "DP",
-    text: "I've had the pleasure of mentoring Alex early in their career, and their growth has been phenomenal. They now consistently deliver production-ready code that's both performant and maintainable.",
+    name: "Open Source Community",
+    role: "GitHub",
+    initials: "OS",
+    text: "Shubham's MediFlow project showcases incredible engineering — voice-enabled hospital booking in 4 languages with proper RBAC and real-time scheduling. Truly impressive work.",
   },
 ];
 

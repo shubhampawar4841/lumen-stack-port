@@ -3,43 +3,38 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 const experiences = [
   {
-    company: "TechNova Inc.",
-    role: "Senior Full Stack Developer",
+    company: "Junoon LLC (Remote)",
+    role: "Full Stack Developer",
+    date: "May 2025 - Present",
+    points: [
+      "Built AI-powered React Native applications with real-time LLM interactions",
+      "Developed multi-agent workflows using Cursor AI and n8n automation pipelines",
+      "Integrated Groq + OpenAI APIs for multi-modal AI systems",
+      "Built scalable scraping systems using Firecrawl, Apify, Selenium & BeautifulSoup",
+      "Designed Supabase schemas with RLS for secure real-time data access",
+    ],
+  },
+  {
+    company: "Finovoice (Remote)",
+    role: "Full Stack Developer",
+    date: "Mar 2025 - Present",
+    points: [
+      "Built AI-driven SaaS platform for investment advisors",
+      "Implemented RBAC + RLS with Clerk & Supabase",
+      "Developed trade timeline system with 100% accurate data handling",
+      "Created dashboards with P/L indicators & risk/reward analytics",
+      "Optimized API calls & improved UI performance with scalable architecture",
+    ],
+  },
+  {
+    company: "Open Source & Personal Projects",
+    role: "Developer & Contributor",
     date: "2023 - Present",
     points: [
-      "Led development of a real-time analytics dashboard serving 50K+ daily users",
-      "Architected microservices infrastructure reducing API response times by 40%",
-      "Mentored a team of 4 junior developers through code reviews and pair programming",
-    ],
-  },
-  {
-    company: "DataStream Labs",
-    role: "Full Stack Developer",
-    date: "2022 - 2023",
-    points: [
-      "Built a data visualization platform processing 1M+ data points in real-time",
-      "Implemented CI/CD pipelines reducing deployment time from 2 hours to 15 minutes",
-      "Developed a custom GraphQL API layer for unified data access",
-    ],
-  },
-  {
-    company: "CodeCraft Studio",
-    role: "Frontend Developer",
-    date: "2021 - 2022",
-    points: [
-      "Developed responsive web applications for 10+ clients across various industries",
-      "Created a reusable component library reducing development time by 30%",
-      "Optimized web performance achieving 95+ Lighthouse scores",
-    ],
-  },
-  {
-    company: "Open Source",
-    role: "Contributor & Maintainer",
-    date: "2020 - Present",
-    points: [
-      "Active contributor to multiple open-source projects with 500+ GitHub stars",
-      "Maintained a popular npm package with 10K+ weekly downloads",
-      "Organized community meetups and workshops on modern web development",
+      "Built MediFlow — AI hospital management system with voice booking in 4 languages",
+      "Created end-to-end AI content automation pipeline (idea → video → publish)",
+      "Developed a full-stack Medium clone deployed on Cloudflare Workers",
+      "Active on LeetCode & GeeksforGeeks for DSA practice",
     ],
   },
 ];
@@ -62,7 +57,6 @@ const ExperienceSection = () => {
         </motion.h2>
 
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border">
             <motion.div style={{ height: lineHeight }} className="w-full bg-gradient-to-b from-primary via-secondary to-accent" />
           </div>
@@ -77,7 +71,6 @@ const ExperienceSection = () => {
                 i % 2 === 0 ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8 ml-12 md:ml-auto"
               } ${i % 2 === 0 ? "ml-12" : "ml-12"}`}
             >
-              {/* Dot */}
               <div className={`absolute top-6 w-3 h-3 rounded-full bg-primary glow-primary ${
                 i % 2 === 0 ? "left-[-2.1rem] md:-right-[1.85rem] md:left-auto" : "-left-[2.1rem] md:-left-[1.85rem]"
               }`} />

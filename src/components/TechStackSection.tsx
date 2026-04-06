@@ -1,32 +1,44 @@
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 
-const categories = ["Frontend", "Backend", "DevOps & Tools", "Languages"];
+const categories = ["Frontend", "Backend", "AI & Scraping", "DevOps & Tools", "Languages"];
 
 const techData: Record<string, Array<{ name: string; desc: string; level: number }>> = {
   Frontend: [
-    { name: "React", desc: "Building complex SPAs & component libraries", level: 95 },
-    { name: "Next.js", desc: "SSR/SSG applications with optimal performance", level: 88 },
-    { name: "TypeScript", desc: "Type-safe development at scale", level: 92 },
-    { name: "Figma", desc: "Design to code with pixel-perfect accuracy", level: 80 },
+    { name: "React.js", desc: "Building complex SPAs & component libraries", level: 95 },
+    { name: "Next.js", desc: "SSR/SSG applications with optimal performance", level: 90 },
+    { name: "Angular 14+", desc: "Enterprise-grade applications", level: 82 },
+    { name: "React Native", desc: "Cross-platform mobile applications", level: 80 },
+    { name: "TailwindCSS", desc: "Utility-first responsive design", level: 92 },
+    { name: "Material UI", desc: "Component libraries & design systems", level: 85 },
   ],
   Backend: [
-    { name: "Node.js", desc: "REST & GraphQL APIs, microservices", level: 88 },
+    { name: "Node.js", desc: "REST APIs & microservices", level: 88 },
+    { name: "Express.js", desc: "Backend frameworks & middleware", level: 88 },
     { name: "PostgreSQL", desc: "Complex queries, optimization, migrations", level: 85 },
     { name: "MongoDB", desc: "Document-based data modeling", level: 82 },
-    { name: "GraphQL", desc: "Schema design, resolvers, subscriptions", level: 78 },
-    { name: "Redis", desc: "Caching strategies and pub/sub systems", level: 75 },
+    { name: "Prisma ORM", desc: "Type-safe database access & migrations", level: 88 },
+    { name: "Supabase", desc: "Real-time DB, auth, RLS policies", level: 90 },
+    { name: "Firebase", desc: "Serverless backend & real-time features", level: 78 },
+  ],
+  "AI & Scraping": [
+    { name: "Cursor AI", desc: "AI-powered development workflows", level: 85 },
+    { name: "Firecrawl", desc: "Web scraping & data extraction", level: 80 },
+    { name: "Bolna AI", desc: "Voice agents & conversational AI", level: 78 },
+    { name: "OpenAI / Groq", desc: "LLM integration & multi-modal AI", level: 82 },
   ],
   "DevOps & Tools": [
-    { name: "Docker", desc: "Containerization & multi-stage builds", level: 82 },
-    { name: "AWS", desc: "EC2, S3, Lambda, CloudFront deployments", level: 78 },
-    { name: "Kubernetes", desc: "Container orchestration & scaling", level: 70 },
-    { name: "Git", desc: "Advanced workflows, rebasing, CI/CD", level: 92 },
+    { name: "Git / GitHub", desc: "Version control & collaboration", level: 92 },
+    { name: "Cloudflare Workers", desc: "Edge computing & serverless", level: 80 },
+    { name: "Vercel", desc: "Deployment & CI/CD pipelines", level: 88 },
+    { name: "Postman", desc: "API testing & documentation", level: 85 },
   ],
   Languages: [
     { name: "TypeScript", desc: "Primary language for web development", level: 92 },
-    { name: "Python", desc: "Scripting, automation, data processing", level: 80 },
     { name: "JavaScript", desc: "Deep understanding of the language", level: 95 },
+    { name: "C++", desc: "DSA & competitive programming", level: 78 },
+    { name: "SQL", desc: "Database queries & optimization", level: 85 },
+    { name: "HTML5 / CSS3", desc: "Semantic markup & modern layouts", level: 95 },
   ],
 };
 
@@ -39,22 +51,13 @@ const TechStackSection = () => {
     <section id="skills" className="py-24 relative" ref={ref}>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
       <div className="max-w-7xl mx-auto px-6">
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          className="font-code text-primary text-sm mb-2 tracking-widest"
-        >
+        <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} className="font-code text-primary text-sm mb-2 tracking-widest">
           {"// MY ARSENAL"}
         </motion.p>
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="font-display text-3xl md:text-5xl font-bold text-foreground mb-12"
-        >
+        <motion.h2 initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} className="font-display text-3xl md:text-5xl font-bold text-foreground mb-12">
           Tech Stack
         </motion.h2>
 
-        {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-10 relative">
           {categories.map((cat) => (
             <button
@@ -76,7 +79,6 @@ const TechStackSection = () => {
           ))}
         </div>
 
-        {/* Cards */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
