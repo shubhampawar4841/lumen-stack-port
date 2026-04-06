@@ -2,8 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
 
-const roles = ["Full Stack Developer", "UI/UX Engineer", "Open Source Contributor", "Problem Solver"];
-const techStack = ["React", "TypeScript", "Node.js", "Python", "PostgreSQL", "Docker", "AWS", "GraphQL", "Next.js", "MongoDB", "Redis", "Kubernetes", "Figma", "Git"];
+const roles = ["Full Stack Developer", "AI Engineer", "Open Source Contributor", "Problem Solver"];
+const techStack = ["React", "Next.js", "TypeScript", "Node.js", "Angular", "PostgreSQL", "MongoDB", "Supabase", "Prisma", "Docker", "Cloudflare", "Express", "Python", "Firebase"];
 
 const ScrambleText = ({ text }: { text: string }) => {
   const [display, setDisplay] = useState(text);
@@ -70,7 +70,6 @@ const HeroSection = () => {
 
   return (
     <section id="home" ref={containerRef} className="relative min-h-screen flex flex-col justify-center overflow-hidden grid-bg">
-      {/* Floating shapes */}
       {[...Array(5)].map((_, i) => (
         <motion.div
           key={i}
@@ -90,66 +89,101 @@ const HeroSection = () => {
         />
       ))}
 
-      {/* Gradient orbs */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/5 rounded-full blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-6 py-32 relative z-10">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="font-code text-primary text-sm mb-4 tracking-widest"
-        >
-          {"// WELCOME TO MY WORLD"}
-        </motion.p>
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="font-code text-primary text-sm mb-4 tracking-widest"
+            >
+              {"// WELCOME TO MY WORLD"}
+            </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4"
-        >
-          <ScrambleText text="ALEX CHEN" />
-        </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4"
+            >
+              <ScrambleText text="SHUBHAM" />
+              <br />
+              <ScrambleText text="PAWAR" />
+            </motion.h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="font-code text-xl md:text-2xl text-muted-foreground mb-8 h-8"
-        >
-          <span className="text-primary">{">"}</span> {roleText}
-          <span className="animate-pulse text-primary">|</span>
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="font-code text-xl md:text-2xl text-muted-foreground mb-8 h-8"
+            >
+              <span className="text-primary">{">"}</span> {roleText}
+              <span className="animate-pulse text-primary">|</span>
+            </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="font-body text-muted-foreground max-w-xl text-lg mb-10"
-        >
-          Building exceptional digital experiences with clean code and creative solutions. Passionate about turning complex problems into elegant interfaces.
-        </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="font-body text-muted-foreground max-w-xl text-lg mb-10"
+            >
+              Full Stack Engineer skilled in Next.js, React, Angular, TypeScript & AI-powered applications. Building exceptional digital experiences with clean code and creative solutions.
+            </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-          className="flex flex-wrap gap-4"
-        >
-          <button
-            onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-            className="group flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-display font-bold rounded-lg glow-primary hover:scale-105 transition-transform"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1 }}
+              className="flex flex-wrap gap-4"
+            >
+              <button
+                onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+                className="group flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-display font-bold rounded-lg glow-primary hover:scale-105 transition-transform"
+              >
+                View My Work
+                <ArrowDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
+              </button>
+              <button className="flex items-center gap-2 px-8 py-3 border border-primary/30 text-primary font-display rounded-lg hover:border-primary hover:glow-primary transition-all hover:scale-105">
+                <Download size={16} />
+                Download CV
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Profile photo placeholder */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="hidden md:flex items-center justify-center"
           >
-            View My Work
-            <ArrowDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
-          </button>
-          <button className="flex items-center gap-2 px-8 py-3 border border-primary/30 text-primary font-display rounded-lg hover:border-primary hover:glow-primary transition-all hover:scale-105">
-            <Download size={16} />
-            Download CV
-          </button>
-        </motion.div>
+            <div className="relative">
+              <div className="w-72 h-72 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 p-1">
+                <div className="w-full h-full rounded-full glass-card flex items-center justify-center overflow-hidden">
+                  <div className="w-full h-full rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-secondary/30 flex items-center justify-center">
+                    <span className="font-display text-6xl lg:text-7xl font-bold text-foreground">SP</span>
+                  </div>
+                </div>
+              </div>
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 rounded-full border-2 border-dashed border-primary/20"
+                style={{ margin: -12 }}
+              />
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 rounded-full border border-secondary/10"
+                style={{ margin: -24 }}
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Marquee */}

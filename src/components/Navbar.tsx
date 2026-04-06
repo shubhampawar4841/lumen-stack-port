@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const links = ["Home", "About", "Skills", "Projects", "Experience", "Contact"];
 
@@ -8,6 +9,8 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("Home");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -16,6 +19,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    if (!isHome) return;
     const sections = links.map((l) => document.getElementById(l.toLowerCase()));
     const observer = new IntersectionObserver(
       (entries) => {
@@ -29,9 +33,13 @@ const Navbar = () => {
     );
     sections.forEach((s) => s && observer.observe(s));
     return () => observer.disconnect();
-  }, []);
+  }, [isHome]);
 
   const scrollTo = (id: string) => {
+    if (!isHome) {
+      window.location.href = "/#" + id.toLowerCase();
+      return;
+    }
     document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
     setMobileOpen(false);
   };
@@ -49,7 +57,7 @@ const Navbar = () => {
           <button onClick={() => scrollTo("home")} className="flex items-center gap-1">
             <span className="font-display text-xl font-bold text-foreground">
               {"<"}
-              <span className="text-primary">Dev</span>
+              <span className="text-primary">SP</span>
               {"/>"}
             </span>
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
@@ -61,11 +69,11 @@ const Navbar = () => {
                 key={link}
                 onClick={() => scrollTo(link)}
                 className={`relative font-code text-sm tracking-wide transition-colors ${
-                  active === link ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  active === link && isHome ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link}
-                {active === link && (
+                {active === link && isHome && (
                   <motion.span
                     layoutId="nav-underline"
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
@@ -73,6 +81,14 @@ const Navbar = () => {
                 )}
               </button>
             ))}
+            <Link
+              to="/twitter"
+              className={`relative font-code text-sm tracking-wide transition-colors ${
+                !isHome ? "text-primary" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Twitter
+            </Link>
           </div>
 
           <button onClick={() => setMobileOpen(true)} className="md:hidden text-foreground">
@@ -107,6 +123,19 @@ const Navbar = () => {
                 {link}
               </motion.button>
             ))}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: links.length * 0.1 }}
+            >
+              <Link
+                to="/twitter"
+                onClick={() => setMobileOpen(false)}
+                className="font-display text-3xl text-foreground hover:text-primary transition-colors my-3"
+              >
+                Twitter
+              </Link>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

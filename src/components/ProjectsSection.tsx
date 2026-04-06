@@ -4,35 +4,35 @@ import { ExternalLink, Github } from "lucide-react";
 
 const featured = [
   {
-    title: "CloudSync Dashboard",
-    desc: "A real-time cloud infrastructure monitoring dashboard with live metrics, alerting, and multi-provider support.",
-    tags: ["React", "TypeScript", "GraphQL", "AWS"],
+    title: "MediFlow — AI Hospital Management",
+    desc: "Real-world hospital workflow system with voice-enabled booking using Bolna AI. Features appointment lifecycle, RBAC, multi-language voice support (Marathi, Hindi, Tamil, Telugu), and real-time calendar scheduling.",
+    tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Clerk", "Bolna AI"],
     gradient: "from-primary/20 via-accent/10 to-secondary/20",
   },
   {
-    title: "NeuralChat AI",
-    desc: "An AI-powered conversational platform with natural language processing, sentiment analysis, and multi-language support.",
-    tags: ["Next.js", "Python", "PostgreSQL", "Redis"],
+    title: "AI Content Automation Pipeline",
+    desc: "End-to-end automated content generation system that converts idea → script → visuals → video → publish. Multi-agent workflows using n8n with AI-generated scripts, images, and reels for multi-platform distribution.",
+    tags: ["Node.js", "OpenAI", "Groq", "n8n", "Flux Kontext"],
     gradient: "from-secondary/20 via-primary/10 to-accent/20",
   },
   {
-    title: "DevFlow CLI",
-    desc: "An open-source CLI tool for automating development workflows, CI/CD pipelines, and project scaffolding.",
-    tags: ["Node.js", "TypeScript", "Docker", "Git"],
+    title: "Medium Clone — Full Stack Blog",
+    desc: "Production-ready blogging platform with secure JWT authentication, Zod validation, optimized DB queries using Prisma with connection pooling, deployed on Cloudflare Workers.",
+    tags: ["React.js", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "JWT"],
     gradient: "from-accent/20 via-secondary/10 to-primary/20",
   },
 ];
 
 const moreProjects = [
-  { title: "CryptoTracker", desc: "Real-time cryptocurrency portfolio tracker with price alerts.", tags: ["React", "Node.js", "WebSocket"], category: "Full Stack" },
-  { title: "DesignSystem UI", desc: "A comprehensive component library for rapid prototyping.", tags: ["React", "Storybook", "CSS"], category: "Frontend" },
-  { title: "API Gateway", desc: "Microservice API gateway with rate limiting and auth.", tags: ["Node.js", "Redis", "Docker"], category: "Backend" },
-  { title: "TaskFlow Mobile", desc: "Cross-platform task management app with offline sync.", tags: ["React Native", "Firebase"], category: "Mobile" },
-  { title: "DataViz Studio", desc: "Interactive data visualization platform with custom charts.", tags: ["D3.js", "React", "Python"], category: "Frontend" },
-  { title: "LogStream", desc: "Centralized log aggregation and monitoring service.", tags: ["Go", "Elasticsearch", "Kubernetes"], category: "Backend" },
+  { title: "Finovoice SaaS", desc: "AI-driven platform for investment advisors with trade timeline & P/L analytics.", tags: ["React", "Supabase", "Clerk"], category: "Full Stack" },
+  { title: "Voice Agent System", desc: "Multi-language conversational AI with low-latency workflows.", tags: ["Bolna AI", "Sarvam AI", "Node.js"], category: "AI" },
+  { title: "Web Scraping Engine", desc: "Scalable scraping using Firecrawl, Apify & Selenium.", tags: ["Node.js", "Selenium", "Python"], category: "Backend" },
+  { title: "Real-time Dashboard", desc: "Analytics dashboard with live metrics and role-based access.", tags: ["Next.js", "Supabase", "Chart.js"], category: "Frontend" },
+  { title: "JSON Pipeline Generator", desc: "Structured JSON pipelines for downstream AI workflows.", tags: ["TypeScript", "Node.js", "OpenAI"], category: "AI" },
+  { title: "Component Library", desc: "Reusable UI component library with TailwindCSS & Storybook.", tags: ["React", "TailwindCSS", "Storybook"], category: "Frontend" },
 ];
 
-const filters = ["All", "Frontend", "Backend", "Full Stack", "Mobile"];
+const filters = ["All", "Frontend", "Backend", "Full Stack", "AI"];
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -52,7 +52,6 @@ const ProjectsSection = () => {
           Featured Projects
         </motion.h2>
 
-        {/* Featured */}
         <div className="space-y-12 mb-20">
           {featured.map((project, i) => (
             <motion.div
@@ -67,7 +66,7 @@ const ProjectsSection = () => {
                   whileHover={{ scale: 1.02 }}
                   className={`aspect-video rounded-xl bg-gradient-to-br ${project.gradient} glass-card flex items-center justify-center group cursor-pointer overflow-hidden`}
                 >
-                  <div className="font-display text-2xl text-foreground/20 group-hover:text-foreground/40 transition-colors">
+                  <div className="font-display text-2xl text-foreground/20 group-hover:text-foreground/40 transition-colors text-center px-4">
                     {project.title}
                   </div>
                 </motion.div>
@@ -96,7 +95,6 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* More projects */}
         <h3 className="font-display text-2xl font-bold text-foreground mb-6">More Projects</h3>
 
         <div className="flex flex-wrap gap-2 mb-8">
