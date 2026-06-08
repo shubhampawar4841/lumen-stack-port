@@ -39,7 +39,7 @@ const Footer = () => (
         <p className="font-code text-xs text-muted-foreground">
           Designed & Built with ❤️ and ☕
         </p>
-        <p className="font-code text-xs text-muted-foreground/50 mt-1">
+        <p className="font-code text-xs text-muted-foreground/80 mt-1">
           © {new Date().getFullYear()} Shubham Pawar. All rights reserved.
         </p>
       </div>

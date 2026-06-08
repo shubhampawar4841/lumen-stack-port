@@ -55,7 +55,7 @@ const TestimonialsSection = () => {
               className="glass-card rounded-2xl p-8 md:p-12"
             >
               <Quote className="text-primary/30 mb-4" size={40} />
-              <p className="font-body text-lg md:text-xl text-foreground/90 leading-relaxed mb-8">
+              <p className="font-body text-lg md:text-xl text-foreground leading-relaxed mb-8">
                 "{testimonials[current].text}"
               </p>
               <div className="flex items-center gap-4">

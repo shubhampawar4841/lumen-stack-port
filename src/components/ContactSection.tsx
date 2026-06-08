@@ -39,11 +39,11 @@ const ContactSection = () => {
             transition={{ delay: 0.2 }}
             className="flex flex-col justify-center"
           >
-            <h3 className="font-display text-4xl md:text-6xl font-bold text-foreground/10 mb-8 leading-tight">
+            <h3 className="font-display text-4xl md:text-6xl font-bold text-foreground/20 mb-8 leading-tight">
               GET IN<br />
-              <span className="text-primary/30">TOUCH</span>
+              <span className="text-primary/50">TOUCH</span>
             </h3>
-            <p className="font-body text-muted-foreground mb-8 max-w-md">
+            <p className="font-body text-foreground/80 mb-8 max-w-md leading-relaxed">
               Have a project in mind or just want to chat? I'm always open to discussing new opportunities and ideas. Let's create something amazing together.
             </p>
             <div className="flex gap-3">
@@ -82,7 +82,7 @@ const ContactSection = () => {
                   type={field.type}
                   placeholder={field.label}
                   required
-                  className="w-full px-4 py-3 glass-card rounded-lg font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:shadow-[0_0_15px_hsl(168_100%_50%/0.15)] transition-all bg-transparent border border-border"
+                  className="w-full px-4 py-3 glass-card rounded-lg font-body text-foreground placeholder:text-muted-foreground/80 focus:outline-none focus:border-primary/50 focus:shadow-[0_0_15px_hsl(168_100%_50%/0.15)] transition-all bg-transparent border border-border"
                 />
               </div>
             ))}
@@ -90,7 +90,7 @@ const ContactSection = () => {
               placeholder="Message"
               rows={5}
               required
-              className="w-full px-4 py-3 glass-card rounded-lg font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:shadow-[0_0_15px_hsl(168_100%_50%/0.15)] transition-all bg-transparent border border-border resize-none"
+              className="w-full px-4 py-3 glass-card rounded-lg font-body text-foreground placeholder:text-muted-foreground/80 focus:outline-none focus:border-primary/50 focus:shadow-[0_0_15px_hsl(168_100%_50%/0.15)] transition-all bg-transparent border border-border resize-none"
             />
             <button
               type="submit"

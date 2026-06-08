@@ -103,7 +103,7 @@ const TechStackSection = () => {
                   </div>
                   <h3 className="font-display text-foreground font-bold">{tech.name}</h3>
                 </div>
-                <p className="font-body text-sm text-muted-foreground mb-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <p className="font-body text-sm text-foreground/75 mb-4 leading-relaxed">
                   {tech.desc}
                 </p>
                 <div className="h-1 rounded-full bg-muted overflow-hidden">

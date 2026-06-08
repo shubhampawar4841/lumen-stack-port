@@ -88,8 +88,12 @@ const TwitterPage = () => {
 
             <div className="glass-card rounded-2xl p-8">
               <div className="flex items-start gap-6">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/40 to-secondary/40 flex items-center justify-center shrink-0">
-                  <span className="font-display text-2xl font-bold text-foreground">SP</span>
+                <div className="w-20 h-20 rounded-full overflow-hidden shrink-0 ring-2 ring-primary/30">
+                  <img
+                    src="/profile.jpeg"
+                    alt="Shubham Pawar"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
@@ -150,8 +154,12 @@ const TwitterPage = () => {
                 className="glass-card rounded-xl p-6 hover:border-primary/20 transition-colors"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center shrink-0">
-                    <span className="font-display text-xs font-bold text-foreground">SP</span>
+                  <div className="w-10 h-10 rounded-full overflow-hidden shrink-0">
+                    <img
+                      src="/profile.jpeg"
+                      alt="Shubham Pawar"
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
 
 const roles = ["Full Stack Developer", "AI Engineer", "Open Source Contributor", "Problem Solver"];
+const resumeUrl = "/shubhamresumme.pdf";
 const techStack = ["React", "Next.js", "TypeScript", "Node.js", "Angular", "PostgreSQL", "MongoDB", "Supabase", "Prisma", "Docker", "Cloudflare", "Express", "Python", "Firebase"];
 
 const ScrambleText = ({ text }: { text: string }) => {
@@ -119,7 +120,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="font-code text-xl md:text-2xl text-muted-foreground mb-8 h-8"
+              className="font-code text-xl md:text-2xl text-foreground/85 mb-8 h-8"
             >
               <span className="text-primary">{">"}</span> {roleText}
               <span className="animate-pulse text-primary">|</span>
@@ -129,7 +130,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="font-body text-muted-foreground max-w-xl text-lg mb-10"
+              className="font-body text-foreground/80 max-w-xl text-lg mb-10"
             >
               Full Stack Engineer skilled in Next.js, React, Angular, TypeScript & AI-powered applications. Building exceptional digital experiences with clean code and creative solutions.
             </motion.p>
@@ -147,14 +148,19 @@ const HeroSection = () => {
                 View My Work
                 <ArrowDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
               </button>
-              <button className="flex items-center gap-2 px-8 py-3 border border-primary/30 text-primary font-display rounded-lg hover:border-primary hover:glow-primary transition-all hover:scale-105">
+              <a
+                href={resumeUrl}
+                download="Shubham_Pawar_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-8 py-3 border border-primary/30 text-primary font-display rounded-lg hover:border-primary hover:glow-primary transition-all hover:scale-105"
+              >
                 <Download size={16} />
                 Download CV
-              </button>
+              </a>
             </motion.div>
           </div>
 
-          {/* Profile photo placeholder */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -163,10 +169,12 @@ const HeroSection = () => {
           >
             <div className="relative">
               <div className="w-72 h-72 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 p-1">
-                <div className="w-full h-full rounded-full glass-card flex items-center justify-center overflow-hidden">
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-secondary/30 flex items-center justify-center">
-                    <span className="font-display text-6xl lg:text-7xl font-bold text-foreground">SP</span>
-                  </div>
+                <div className="w-full h-full rounded-full glass-card overflow-hidden">
+                  <img
+                    src="/profile.jpeg"
+                    alt="Shubham Pawar"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               </div>
               <motion.div
@@ -190,7 +198,7 @@ const HeroSection = () => {
       <div className="absolute bottom-0 left-0 right-0 border-t border-border/50 overflow-hidden py-4">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...techStack, ...techStack].map((tech, i) => (
-            <span key={i} className="mx-6 font-code text-sm text-muted-foreground/50 flex items-center gap-2">
+            <span key={i} className="mx-6 font-code text-sm text-muted-foreground flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-primary/30" />
               {tech}
             </span>

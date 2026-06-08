@@ -105,7 +105,7 @@ const ProjectsSection = () => {
               <div className={`${i % 2 === 1 ? "md:order-1 md:text-right" : ""}`}>
                 <span className="font-code text-primary text-xs">Featured Project</span>
                 <h3 className="font-display text-2xl font-bold text-foreground mt-2 mb-3">{project.title}</h3>
-                <p className="font-body text-muted-foreground mb-4">{project.desc}</p>
+                <p className="font-body text-base text-foreground/85 mb-4 leading-relaxed">{project.desc}</p>
                 <div className={`flex flex-wrap gap-2 mb-4 ${i % 2 === 1 ? "md:justify-end" : ""}`}>
                   {project.tags.map((tag) => (
                     <span key={tag} className="font-code text-xs px-3 py-1 rounded-full bg-primary/10 text-primary">
@@ -182,10 +182,10 @@ const ProjectsSection = () => {
                 className="glass-card rounded-xl p-6 border-t-2 border-t-primary/50 hover:border-t-primary transition-colors cursor-pointer group"
               >
                 <h4 className="font-display font-bold text-foreground group-hover:text-primary transition-colors mb-2">{project.title}</h4>
-                <p className="font-body text-sm text-muted-foreground mb-4">{project.desc}</p>
+                <p className="font-body text-sm text-foreground/80 mb-4 leading-relaxed">{project.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="font-code text-xs px-2 py-0.5 rounded bg-muted text-muted-foreground">{tag}</span>
+                    <span key={tag} className="font-code text-xs px-2 py-0.5 rounded bg-muted text-foreground/75">{tag}</span>
                   ))}
                 </div>
               </motion.div>

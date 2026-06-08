@@ -53,10 +53,12 @@ const AboutSection = () => {
           <motion.div initial={{ opacity: 0, x: -50 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.2 }} className="flex items-center justify-center">
             <div className="relative w-72 h-72 md:w-96 md:h-96">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 rotate-6" />
-              <div className="absolute inset-0 rounded-2xl glass-card flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/40 to-secondary/40 flex items-center justify-center">
-                  <span className="font-display text-4xl font-bold text-foreground">SP</span>
-                </div>
+              <div className="absolute inset-0 rounded-2xl glass-card overflow-hidden">
+                <img
+                  src="/profile.jpeg"
+                  alt="Shubham Pawar"
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="absolute -bottom-4 -right-4 glass-card rounded-lg px-3 py-2 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -66,10 +68,10 @@ const AboutSection = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 50 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.3 }} className="flex flex-col justify-center">
-            <p className="font-body text-foreground/80 text-lg leading-relaxed mb-6">
+            <p className="font-body text-foreground text-lg leading-relaxed mb-6">
               I'm Shubham Pawar — a Full Stack Engineer skilled in Next.js, React, Angular, TypeScript, Express, and Prisma. I'm experienced in AI-powered applications and web scraping technologies.
             </p>
-            <p className="font-body text-muted-foreground leading-relaxed mb-8">
+            <p className="font-body text-foreground/80 leading-relaxed mb-8">
               I constantly improve my coding skills and expand my portfolio by sharing my work online. I love building real-world solutions — from hospital management systems with voice AI to automated content pipelines.
             </p>
 

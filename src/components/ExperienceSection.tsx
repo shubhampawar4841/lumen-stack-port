@@ -81,7 +81,7 @@ const ExperienceSection = () => {
                 <p className="font-body text-secondary mb-3">{exp.company}</p>
                 <ul className="space-y-2">
                   {exp.points.map((point, j) => (
-                    <li key={j} className="font-body text-sm text-muted-foreground flex gap-2">
+                    <li key={j} className="font-body text-sm text-foreground/80 flex gap-2 leading-relaxed">
                       <span className="text-primary mt-1.5 shrink-0">▹</span>
                       {point}
                     </li>
