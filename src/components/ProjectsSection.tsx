@@ -2,12 +2,29 @@ import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 
-const featured = [
+const featured: {
+  title: string;
+  desc: string;
+  tags: string[];
+  gradient: string;
+  video?: string;
+  liveUrl?: string;
+  githubUrl?: string;
+}[] = [
   {
     title: "MediFlow — AI Hospital Management",
     desc: "Real-world hospital workflow system with voice-enabled booking using Bolna AI. Features appointment lifecycle, RBAC, multi-language voice support (Marathi, Hindi, Tamil, Telugu), and real-time calendar scheduling.",
     tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Clerk", "Bolna AI"],
     gradient: "from-primary/20 via-accent/10 to-secondary/20",
+    video: "/hello-clinics.mp4",
+  },
+  {
+    title: "Raava — AI Digital Legacy Platform",
+    desc: "Platform that preserves loved ones through interactive digital avatars. React Native mobile app and Next.js web with real-time AI voice conversations via Vapi and Cartesia, video generation through Kling, and automated onboarding pipelines powered by n8n and Supabase.",
+    tags: ["Next.js", "React Native", "Express", "TypeScript", "Supabase", "Vapi AI", "Cartesia", "Kling Video", "n8n", "Nanobanana"],
+    gradient: "from-accent/20 via-primary/10 to-secondary/20",
+    video: "/raava.mp4",
+    liveUrl: "https://www.getraava.com/",
   },
   {
     title: "AI Content Automation Pipeline",
@@ -64,11 +81,25 @@ const ProjectsSection = () => {
               <div className={`${i % 2 === 1 ? "md:order-2" : ""}`}>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className={`aspect-video rounded-xl bg-gradient-to-br ${project.gradient} glass-card flex items-center justify-center group cursor-pointer overflow-hidden`}
+                  className={`aspect-video rounded-xl bg-gradient-to-br ${project.gradient} glass-card group cursor-pointer overflow-hidden relative`}
                 >
-                  <div className="font-display text-2xl text-foreground/20 group-hover:text-foreground/40 transition-colors text-center px-4">
-                    {project.title}
-                  </div>
+                  {project.video ? (
+                    <video
+                      className="absolute inset-0 h-full w-full object-cover"
+                      src={project.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      aria-label={`${project.title} product preview`}
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="font-display text-2xl text-foreground/20 group-hover:text-foreground/40 transition-colors text-center px-4">
+                        {project.title}
+                      </div>
+                    </div>
+                  )}
                 </motion.div>
               </div>
               <div className={`${i % 2 === 1 ? "md:order-1 md:text-right" : ""}`}>
@@ -83,12 +114,34 @@ const ProjectsSection = () => {
                   ))}
                 </div>
                 <div className={`flex gap-3 ${i % 2 === 1 ? "md:justify-end" : ""}`}>
-                  <button className="flex items-center gap-2 px-4 py-2 glass-card rounded-lg font-code text-sm text-foreground hover:text-primary transition-colors hover:border-primary/30">
-                    <ExternalLink size={14} /> Live Demo
-                  </button>
-                  <button className="flex items-center gap-2 px-4 py-2 glass-card rounded-lg font-code text-sm text-foreground hover:text-primary transition-colors hover:border-primary/30">
-                    <Github size={14} /> Source
-                  </button>
+                  {project.liveUrl ? (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 glass-card rounded-lg font-code text-sm text-foreground hover:text-primary transition-colors hover:border-primary/30"
+                    >
+                      <ExternalLink size={14} /> Live Demo
+                    </a>
+                  ) : (
+                    <button className="flex items-center gap-2 px-4 py-2 glass-card rounded-lg font-code text-sm text-foreground hover:text-primary transition-colors hover:border-primary/30">
+                      <ExternalLink size={14} /> Live Demo
+                    </button>
+                  )}
+                  {project.githubUrl ? (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 glass-card rounded-lg font-code text-sm text-foreground hover:text-primary transition-colors hover:border-primary/30"
+                    >
+                      <Github size={14} /> Source
+                    </a>
+                  ) : (
+                    <button className="flex items-center gap-2 px-4 py-2 glass-card rounded-lg font-code text-sm text-foreground hover:text-primary transition-colors hover:border-primary/30">
+                      <Github size={14} /> Source
+                    </button>
+                  )}
                 </div>
               </div>
             </motion.div>
