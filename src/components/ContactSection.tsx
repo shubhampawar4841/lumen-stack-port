@@ -5,7 +5,7 @@ import { Github, Linkedin, Twitter, Mail, Send, Loader2, Phone } from "lucide-re
 const socials = [
   { icon: Github, label: "GitHub", href: "https://github.com/shubhampawar4841" },
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/shubhampawar4841" },
-  { icon: Twitter, label: "Twitter", href: "https://twitter.com/shubhampawar4841" },
+  { icon: Twitter, label: "Twitter", href: "https://twitter.com/shubhampawar484" },
   { icon: Mail, label: "Email", href: "mailto:shubhampawar4036@gmail.com" },
   { icon: Phone, label: "Phone", href: "tel:+919359748824" },
 ];

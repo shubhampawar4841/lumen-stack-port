@@ -119,7 +119,7 @@ const TwitterPage = () => {
 
               <div className="mt-6 flex gap-3">
                 <a
-                  href="https://twitter.com/shubhampawar4841"
+                  href="https://twitter.com/shubhampawar484"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-6 py-2.5 bg-[#1DA1F2] text-white font-display font-bold rounded-full hover:scale-105 transition-transform text-sm"
@@ -127,7 +127,7 @@ const TwitterPage = () => {
                   <Twitter size={16} /> Follow on X
                 </a>
                 <a
-                  href="https://twitter.com/shubhampawar4841"
+                  href="https://twitter.com/shubhampawar484"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-6 py-2.5 glass-card rounded-full font-code text-sm text-foreground hover:text-primary transition-colors"
@@ -164,7 +164,7 @@ const TwitterPage = () => {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="font-display font-bold text-foreground text-sm">Shubham Pawar</span>
-                      <span className="font-code text-xs text-muted-foreground">@shubhampawar4841</span>
+                      <span className="font-code text-xs text-muted-foreground">@shubhampawar484</span>
                       <span className="font-code text-xs text-muted-foreground">·</span>
                       <span className="font-code text-xs text-muted-foreground flex items-center gap-1">
                         <Calendar size={10} /> {tweet.date}
@@ -198,7 +198,7 @@ const TwitterPage = () => {
             className="mt-12 text-center"
           >
             <a
-              href="https://twitter.com/shubhampawar4841"
+              href="https://twitter.com/shubhampawar484"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 bg-[#1DA1F2] text-white font-display font-bold rounded-full hover:scale-105 transition-transform"

@@ -35,7 +35,7 @@ const Footer = () => (
         <div className="flex gap-4 md:shrink-0">
           <a href="https://github.com/shubhampawar4841" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary transition-colors"><Github size={18} /></a>
           <a href="https://linkedin.com/in/shubhampawar4841" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={18} /></a>
-          <a href="https://twitter.com/shubhampawar4841" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors"><Twitter size={18} /></a>
+          <a href="https://twitter.com/shubhampawar484" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors"><Twitter size={18} /></a>
           <a href="mailto:shubhampawar4036@gmail.com" aria-label="Email" className="text-muted-foreground hover:text-primary transition-colors"><Mail size={18} /></a>
         </div>
       </div>
